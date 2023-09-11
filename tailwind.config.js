@@ -24,7 +24,7 @@ module.exports = {
           'primary-content': '#ffffff',   /* Foreground content color to use on primary color */
 
           'secondary': '#808080',         /* Secondary color */
-          'secondary-focus': '#f3cc30',   /* Secondary color - focused */
+          'secondary-focus': '#14F195',   /* Secondary color - focused */
           'secondary-content': '#ffffff', /* Foreground content color to use on secondary color */
 
           'accent': '#33a382',            /* Accent color */
