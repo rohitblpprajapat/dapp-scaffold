@@ -1,19 +1,23 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import Link from "next/link";
 import dynamic from 'next/dynamic';
 import React, { useState } from "react";
 import { useAutoConnect } from '../contexts/AutoConnectProvider';
 import NetworkSwitcher from './NetworkSwitcher';
 import NavElement from './nav-element';
-
+import { useWallet } from '@solana/wallet-adapter-react';
 const WalletMultiButtonDynamic = dynamic(
   async () => (await import('@solana/wallet-adapter-react-ui')).WalletMultiButton,
   { ssr: false }
 );
 
 export const AppBar: React.FC = () => {
+  const { connected } = useWallet()
   const { autoConnect, setAutoConnect } = useAutoConnect();
   const [isNavOpen, setIsNavOpen] = useState(false);
+  useEffect(() => {
+    console.log(connected)
+  }, [connected])
   return (
     <div>
       {/* NavBar / Header */}
